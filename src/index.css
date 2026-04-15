@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #5d5fef;
+  --color-bg-sidebar: #ffffff;
+  --color-bg-main: #f8f9ff;
+  --color-text-main: #05004e;
+  --color-text-muted: #737791;
+  --color-card-sales-bg: #ffe2e5;
+  --color-card-order-bg: #fff4de;
+  --color-card-sold-bg: #dcfce7;
+  --color-card-customer-bg: #f3e8ff;
+  --color-stat-pink: #fa5a7d;
+  --color-stat-orange: #ff947a;
+  --color-stat-green: #3cd856;
+  --color-stat-purple: #bf83ff;
+  
+  --font-inter: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-main text-text-main font-inter;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
