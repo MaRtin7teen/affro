@@ -60,9 +60,9 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
 
           {/* User Profile */}
           <div className="flex items-center gap-4 border-l border-gray-100 dark:border-white/5 pl-6 lg:pl-10">
-            <div className="w-12 h-12 rounded-2xl bg-gray-200 dark:bg-dark-sidebar overflow-hidden shadow-inner border border-gray-200 dark:border-white/10">
+            <div className="w-12 h-12 rounded-full bg-gray-200 dark:bg-dark-sidebar overflow-hidden shadow-inner border border-gray-200 dark:border-white/10">
               <img
-                src="https://api.dicebear.com/7.x/avataaars/svg?seed=Affro"
+                src="https://api.dicebear.com/7.x/avataaars/svg?backgroundType=gradientLinear,solid&backgroundColor=5d5fee&seed=Ryker"
                 alt="User Avatar"
                 className="w-full h-full object-cover"
               />

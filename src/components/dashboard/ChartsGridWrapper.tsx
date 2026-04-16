@@ -11,10 +11,10 @@ export const ChartsGridWrapper = ({ title, children, className = "" }: ChartsGri
   <motion.div 
     whileHover={{ y: -5 }}
     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-    className={`bg-white dark:bg-dark-sidebar p-8 rounded-[2.5rem] shadow-premium dark:shadow-premium-dark border border-transparent dark:border-white/5 transition-colors duration-500 ${className}`}
+    className={`bg-white dark:bg-dark-sidebar p-8 rounded-[2.5rem] shadow-premium dark:shadow-premium-dark border border-transparent dark:border-white/5 transition-colors duration-500 h-full flex flex-col ${className}`}
   >
-    <h3 className="text-2xl font-bold text-text-main dark:text-dark-text mb-8 tracking-tight">{title}</h3>
-    <div className="relative">
+    <h3 className="text-2xl font-bold text-text-main dark:text-dark-text mb-8 tracking-tight shrink-0">{title}</h3>
+    <div className="relative flex-1 flex flex-col">
       {children}
     </div>
   </motion.div>

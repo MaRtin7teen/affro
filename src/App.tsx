@@ -63,20 +63,20 @@ function App() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.01 }}
-          className="p-10 space-y-8 overflow-y-auto"
+          className="p-10 space-y-10 overflow-y-auto"
         >
           {/* Top Row: Today's Sales & Visitor Insights */}
-          <div className="flex flex-col lg:flex-row gap-8">
-            <motion.div variants={itemVariants} className="flex-[1.8]">
+          <div className="grid grid-cols-12 gap-10 min-h-[420px]">
+            <motion.div variants={itemVariants} className="col-span-12 lg:col-span-8">
               <StatsGrid />
             </motion.div>
-            <motion.div variants={itemVariants} className="flex-1">
+            <motion.div variants={itemVariants} className="col-span-12 lg:col-span-4">
               <VisitorInsights className="h-full" />
             </motion.div>
           </div>
 
           {/* Middle Row: Total Revenue, Customer Satisfaction, Target vs Reality */}
-          <div className="grid grid-cols-12 gap-8">
+          <div className="grid grid-cols-12 gap-10 min-h-[450px]">
             <motion.div variants={itemVariants} className="col-span-12 lg:col-span-5">
               <RevenueChart />
             </motion.div>
@@ -89,7 +89,7 @@ function App() {
           </div>
 
           {/* Bottom Row: Top Products, Sales Mapping, Volume vs Service */}
-          <div className="grid grid-cols-12 gap-8">
+          <div className="grid grid-cols-12 gap-10 min-h-[500px]">
             <motion.div variants={itemVariants} className="col-span-12 lg:col-span-5">
               <TopProducts />
             </motion.div>

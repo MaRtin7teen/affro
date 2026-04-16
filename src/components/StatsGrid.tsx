@@ -53,7 +53,7 @@ const stats = [
 
 export const StatsGrid = () => {
   return (
-    <div className="bg-white dark:bg-dark-sidebar p-8 rounded-[2.5rem] shadow-premium dark:shadow-premium-dark mb-8 flex-1 transition-colors duration-500 border border-transparent dark:border-white/5">
+    <div className="bg-white dark:bg-dark-sidebar p-8 rounded-[2.5rem] shadow-premium dark:shadow-premium-dark flex-1 transition-colors duration-500 border border-transparent dark:border-white/5 h-full">
       <div className="flex justify-between items-center mb-1">
         <div>
           <h2 className="text-2xl font-bold text-text-main dark:text-dark-text tracking-tight">Today's Sales</h2>

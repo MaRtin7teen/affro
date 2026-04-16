@@ -41,7 +41,7 @@ export const Sidebar = () => {
           <Zap className="text-white w-6 h-6 fill-current" />
         </motion.div>
         <span className="text-2xl font-bold text-text-main dark:text-dark-text tracking-tight">
-          Aforro
+          Affro Project
         </span>
       </div>
 
@@ -96,7 +96,7 @@ export const Sidebar = () => {
           <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm border border-white/10">
             <Zap className="text-white w-6 h-6 fill-current" />
           </div>
-          <h3 className="text-xl font-bold mb-2">Aforrro Pro</h3>
+          <h3 className="text-xl font-bold mb-2">Affro Pro</h3>
           <p className="text-white/70 text-sm mb-5 leading-snug">
             Get access to all features on tetumbas
           </p>
