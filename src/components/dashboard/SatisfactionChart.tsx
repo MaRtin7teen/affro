@@ -1,5 +1,5 @@
 import React from 'react';
-import { AreaChart, Area, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, ResponsiveContainer, Tooltip } from 'recharts';
 import { ChartsGridWrapper } from './ChartsGridWrapper';
 
 const satisfactionData = [
@@ -10,52 +10,65 @@ const satisfactionData = [
   { name: "5", thisMonth: 4890, lastMonth: 4800 },
 ];
 
-export const SatisfactionChart = () => (
-  <ChartsGridWrapper title="Customer Satisfaction">
-    <div className="h-[200px]">
-      <ResponsiveContainer width="100%" height="100%">
-        <AreaChart data={satisfactionData}>
-          <defs>
-            <linearGradient id="colorSat" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#0095FF" stopOpacity={0.1} />
-              <stop offset="95%" stopColor="#0095FF" stopOpacity={0} />
-            </linearGradient>
-          </defs>
-          <Area
-            type="monotone"
-            dataKey="thisMonth"
-            stroke="#0095FF"
-            strokeWidth={3}
-            fillOpacity={1}
-            fill="url(#colorSat)"
-          />
-          <Area
-            type="monotone"
-            dataKey="lastMonth"
-            stroke="#05CD99"
-            strokeWidth={3}
-            fill="transparent"
-            strokeDasharray="5 5"
-          />
-        </AreaChart>
-      </ResponsiveContainer>
-    </div>
-    <div className="mt-8 flex justify-between items-center text-center">
-      <div>
-        <div className="flex items-center gap-1 justify-center mb-1">
-          <div className="w-2 h-2 rounded-full bg-[#0095FF]"></div>
-          <p className="text-xs text-text-muted">Last Month</p>
-        </div>
-        <p className="text-sm font-bold text-text-main">$3,004</p>
+export const SatisfactionChart = () => {
+  const isDark = document.documentElement.classList.contains('dark');
+
+  return (
+    <ChartsGridWrapper title="Customer Satisfaction">
+      <div className="h-[200px]">
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart data={satisfactionData}>
+            <defs>
+              <linearGradient id="colorSat" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#0095FF" stopOpacity={isDark ? 0.3 : 0.1} />
+                <stop offset="95%" stopColor="#0095FF" stopOpacity={0} />
+              </linearGradient>
+            </defs>
+            <Tooltip 
+              contentStyle={{ 
+                backgroundColor: isDark ? '#1E1F26' : '#fff',
+                borderColor: isDark ? 'rgba(255,255,255,0.1)' : '#eee',
+                borderRadius: '12px'
+              }}
+            />
+            <Area
+              type="monotone"
+              dataKey="thisMonth"
+              stroke="#0095FF"
+              strokeWidth={4}
+              fillOpacity={1}
+              fill="url(#colorSat)"
+              animationDuration={2000}
+            />
+            <Area
+              type="monotone"
+              dataKey="lastMonth"
+              stroke="#05CD99"
+              strokeWidth={4}
+              fill="transparent"
+              strokeDasharray="5 5"
+              animationDuration={2000}
+            />
+          </AreaChart>
+        </ResponsiveContainer>
       </div>
-      <div className="w-px h-8 bg-gray-100"></div>
-      <div>
-        <div className="flex items-center gap-1 justify-center mb-1">
-          <div className="w-2 h-2 rounded-full bg-[#05CD99]"></div>
-          <p className="text-xs text-text-muted">This Month</p>
+      <div className="mt-8 flex justify-between items-center text-center">
+        <div>
+          <div className="flex items-center gap-1 justify-center mb-1">
+            <div className="w-2 h-2 rounded-full bg-[#0095FF]"></div>
+            <p className="text-xs text-text-muted dark:text-dark-muted font-bold">Last Month</p>
+          </div>
+          <p className="text-sm font-bold text-text-main dark:text-dark-text">$3,004</p>
         </div>
-        <p className="text-sm font-bold text-text-main">$4,504</p>
+        <div className="w-px h-8 bg-gray-100 dark:bg-white/10"></div>
+        <div>
+          <div className="flex items-center gap-1 justify-center mb-1">
+            <div className="w-2 h-2 rounded-full bg-[#05CD99]"></div>
+            <p className="text-xs text-text-muted dark:text-dark-muted font-bold">This Month</p>
+          </div>
+          <p className="text-sm font-bold text-text-main dark:text-dark-text">$4,504</p>
+        </div>
       </div>
-    </div>
-  </ChartsGridWrapper>
-);
+    </ChartsGridWrapper>
+  );
+};

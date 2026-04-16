@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
@@ -19,10 +20,20 @@ module.exports = {
         "stat-orange": "#ff947a",
         "stat-green": "#3cd856",
         "stat-purple": "#bf83ff",
+        // Dark Mode specifics
+        "dark-bg": "#0B0C11",
+        "dark-sidebar": "#16171D",
+        "dark-card": "#1E1F26",
+        "dark-text": "#E8E9EB",
+        "dark-muted": "#96A5B8",
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
       },
+      boxShadow: {
+        'premium': '0 8px 30px rgba(0,0,0,0.04)',
+        'premium-dark': '0 8px 30px rgba(0,0,0,0.4)',
+      }
     },
   },
   plugins: [],

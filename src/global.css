@@ -10,25 +10,53 @@
   --color-bg-main: #f8f9ff;
   --color-text-main: #05004e;
   --color-text-muted: #737791;
-  --color-card-sales-bg: #ffe2e5;
-  --color-card-order-bg: #fff4de;
-  --color-card-sold-bg: #dcfce7;
-  --color-card-customer-bg: #f3e8ff;
-  --color-stat-pink: #fa5a7d;
-  --color-stat-orange: #ff947a;
-  --color-stat-green: #3cd856;
-  --color-stat-purple: #bf83ff;
   
   --font-inter: "Inter", sans-serif;
 }
 
 @layer base {
   body {
-    @apply bg-bg-main text-text-main font-inter;
+    @apply font-inter transition-colors duration-500 ease-in-out;
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    @apply bg-bg-main text-text-main;
   }
+
+  .dark body {
+    @apply bg-dark-bg text-dark-text;
+  }
+}
+
+/* Custom Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E2E8F0;
+  border-radius: 10px;
+}
+
+.dark ::webkit-scrollbar-thumb {
+  background: #2D3748;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #CBD5E0;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  @apply backdrop-blur-md bg-white/70 border border-white/20;
+}
+
+.dark .glass {
+  @apply backdrop-blur-md bg-black/40 border border-white/10;
 }
 
 code {
