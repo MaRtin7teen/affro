@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @theme {
   --color-primary: #5d5fef;
@@ -10,9 +8,29 @@
   --color-bg-main: #f8f9ff;
   --color-text-main: #05004e;
   --color-text-muted: #737791;
+
+  --color-card-sales-bg: #ffe2e5;
+  --color-card-order-bg: #fff4de;
+  --color-card-sold-bg: #dcfce7;
+  --color-card-customer-bg: #f3e8ff;
+  
+  --color-stat-pink: #fa5a7d;
+  --color-stat-orange: #ff947a;
+  --color-stat-green: #3cd856;
+  --color-stat-purple: #bf83ff;
+
+  --color-dark-bg: #0B0C11;
+  --color-dark-sidebar: #16171D;
+  --color-dark-card: #1E1F26;
+  --color-dark-text: #E8E9EB;
+  --color-dark-muted: #96A5B8;
   
   --font-inter: "Inter", sans-serif;
+
+  --shadow-premium: 0 8px 30px rgba(0,0,0,0.04);
+  --shadow-premium-dark: 0 8px 30px rgba(0,0,0,0.4);
 }
+
 
 @layer base {
   body {
